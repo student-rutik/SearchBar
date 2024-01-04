@@ -6,12 +6,14 @@ const search=()=>{
 
     for(var i=0; i<pName.length;i++){
         let match=product[i].getElementsByTagName("h2")[0];
+        let price=product[i].getElementsByTagName("h3")[0];
 
 
         if(match){
             let txtvalue=match.textContent || match.innerHTML;
+            let pvalue=price.textContent || price.innerHTML;
 
-            if(txtvalue.toUpperCase().indexOf(searchBox)> -1){
+            if(txtvalue.toUpperCase().indexOf(searchBox)> -1 || pvalue.toUpperCase().indexOf(searchBox)> -1){
                 product[i].style.display="";
             }
             else{
